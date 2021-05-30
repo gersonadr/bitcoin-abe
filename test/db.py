@@ -198,7 +198,7 @@ class PostgresDB(ServerDB):
         ServerDB.__init__(db, 'psycopg2')
 
     def get_connect_args(db):
-        return {'user': 'abe', 'password': 'Bitcoin', 'database': 'abe', 'host': str(db.installation_dir)}
+        return {'user': 'abe', 'password': 'Bitcoin', 'database': 'abe', 'host': 'docker-bitcoin-abe_postgresdb_1', 'port': '60000'}
 
     def install_server(db):
         db.bindir = subprocess.Popen(['pg_config', '--bindir'], stdout=subprocess.PIPE).communicate()[0].rstrip()
